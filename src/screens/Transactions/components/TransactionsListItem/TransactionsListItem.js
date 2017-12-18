@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Badge } from 'react-native-elements';
+import React, {Component} from 'react';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {Badge} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { momentFormat } from 'src/utils';
+import {momentFormat} from 'src/utils';
 import styles from './TransactionsListItemStyles';
 
 const formatDate = momentFormat.formatTransactionDate;
@@ -13,23 +13,25 @@ export default class TransactionsListItem extends Component {
     };
 
     toggleOpen = () => {
-        this.setState({ isOpen: !this.state.isOpen });
+        this.setState({isOpen: !this.state.isOpen});
     };
 
     renderSubItems(data) {
-        return data.map(({ date, value, id }) => (
-            <View key={ id } style={styles.subItemContainer}>
-                <View style={styles.subItemDateContainer}>
-                    <Text>{ formatDate(date) }</Text>
+        return data.map(({date, value, id}) => (
+            <TouchableOpacity key={ id } onPress={() => this.props.onSelectTransaction(id)}>
+                <View style={styles.subItemContainer}>
+                    <View style={styles.subItemDateContainer}>
+                        <Text>{ formatDate(date) }</Text>
+                    </View>
+                    <Text>{ value }</Text>
                 </View>
-                <Text>{ value }</Text>
-            </View>
+            </TouchableOpacity>
         ));
     }
 
     render() {
-        const { isOpen } = this.state;
-        const { transactions, category } = this.props.data;
+        const {isOpen} = this.state;
+        const {transactions, category} = this.props.data;
 
         return (
             <View style={styles.container}>
@@ -43,7 +45,7 @@ export default class TransactionsListItem extends Component {
                             <Text>{ category.name }</Text>
                         </View>
                         <View style={styles.rightText}>
-                            <Badge value={transactions.length} />
+                            <Badge value={transactions.length}/>
                             <Text style={styles.transactionsSum}>{ category.sum }</Text>
                         </View>
                     </View>

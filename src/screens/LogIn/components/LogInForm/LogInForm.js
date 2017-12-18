@@ -5,6 +5,7 @@ import { TextInputField } from 'src/components';
 import validate from './validate';
 import { LOG_IN_FORM } from 'src/constants/forms';
 import styles from './LogInFormStyles';
+import { PrimaryButton } from 'src/components';
 
 function LogInForm({ handleSubmit, submitting, invalid }) {
     return (
@@ -26,7 +27,7 @@ function LogInForm({ handleSubmit, submitting, invalid }) {
                 }}
                 component={TextInputField}
             />
-            <Button
+            <PrimaryButton
                 title="Log in"
                 disabled={submitting || invalid}
                 onPress={handleSubmit}

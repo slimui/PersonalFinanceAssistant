@@ -5,6 +5,7 @@ import { TextInputField } from 'src/components';
 import validate from './validate';
 import { SIGN_UP_FORM } from 'src/constants/forms';
 import styles from './SignUpFormStyles';
+import { PrimaryButton } from 'src/components';
 
 function SignUpForm({ handleSubmit, submitting, invalid }) {
     return (
@@ -43,7 +44,7 @@ function SignUpForm({ handleSubmit, submitting, invalid }) {
                 }}
                 component={TextInputField}
             />
-            <Button
+            <PrimaryButton
                 title="Sign up"
                 disabled={submitting || invalid}
                 onPress={handleSubmit}

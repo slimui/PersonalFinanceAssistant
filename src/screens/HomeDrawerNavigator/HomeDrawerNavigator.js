@@ -8,6 +8,8 @@ import SettingsNavigator from '../SettingsNavigator';
 import Transactions from '../TransactionsNavigator';
 import AboutNavigator from '../AboutNavigator';
 import TransactionsNavigator from '../TransactionsNavigator/TransactionsNavigator';
+import TrendsNavigator from '../TrendsNavigator';
+import CurrencyNavigator from '../CurrencyNavigator';
 
 export default DrawerNavigator({
     Transactions: {
@@ -33,6 +35,24 @@ export default DrawerNavigator({
             drawerLabel: 'Categories',
             drawerIcon: ({ tintColor }) =>
                 <DrawerIcon name="sort" tintColor={tintColor} />
+        }
+    },
+    Trends: {
+        screen: TrendsNavigator,
+        title: 'Trends',
+        navigationOptions: {
+            drawerLabel: 'Trends',
+            drawerIcon: ({ tintColor }) =>
+                <DrawerIcon name="info" tintColor={tintColor} />
+        }
+    },
+    Currency: {
+        screen: CurrencyNavigator,
+        title: 'Exchange rates',
+        navigationOptions: {
+            drawerLabel: 'Exchange rates',
+            drawerIcon: ({ tintColor }) =>
+                <DrawerIcon name="credit-card" tintColor={tintColor} />
         }
     },
     About: {

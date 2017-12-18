@@ -4,6 +4,9 @@ import {
 } from 'src/selectors/transactions';
 import TransactionsList from './TransactionsList';
 
+
+
+
 const mapStateToProps = state => {
     return {
         data: getTransactionsGroupedByCategories(state)
