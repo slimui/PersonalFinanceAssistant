@@ -10,13 +10,13 @@ import validate from './validate';
 import {PrimaryButton} from 'src/components';
 
 function TransactionForm({
-                             handleSubmit,
-                             submitting,
-                             invalid,
-                             options,
-                             submitBtnText,
-                             createTransaction
-                         }) {
+    handleSubmit,
+    submitting,
+    invalid,
+    options,
+    submitBtnText,
+    createTransaction
+}) {
     return (
         <View style={styles.container}>
             <Field

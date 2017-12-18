@@ -4,11 +4,13 @@ import {getSelectInputOptionsFromAllCategories} from 'src/selectors/categories';
 import icons from 'src/constants/icons';
 import {values} from 'lodash';
 
-export const getCategoryFormInitialValues = ({
-                                                 name = '',
-                                                 icon = icons[0],
-                                                 categoryTypeId = INCOME_CATEGORY
-                                             } = {}) => {
+export const getCategoryFormInitialValues = (
+    {
+        name = '',
+        icon = icons[0],
+        categoryTypeId = INCOME_CATEGORY
+    } = {}
+) => {
     return {
         name,
         icon,
@@ -47,18 +49,11 @@ export const getTransactionFormOptions = state => {
     };
 };
 
-export const getEditTransactionFormInitialValues = ({transactions: {byId, selected}}) => {
-    if (!selected || !byId[selected]) {
-        return {
-            value: 0,
-            note: "string",
-            date: 0,
-            userId: 0,
-            categoryId: 0,
-            accountId: 0
-        };
+export const getEditTransactionFormInitialValues = (
+    {
+        transactions: {byId, selected}
     }
-
+) => {
     const {value, note, date, userId, categoryId, accountId} = byId[selected];
 
     return {

@@ -1,13 +1,6 @@
 import { connect } from 'react-redux';
-import { getEditTransactionFormInitialValues } from 'src/selectors/forms';
 import { updateTransaction } from 'src/actions/transactions';
 import EditTransactionScreen from './EditTransactionScreen';
-
-const mapStateToProps = state => {
-    return {
-        initialValues: getEditTransactionFormInitialValues(state)
-    }
-};
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -17,4 +10,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditTransactionScreen);
+export default connect(null, mapDispatchToProps)(EditTransactionScreen);
