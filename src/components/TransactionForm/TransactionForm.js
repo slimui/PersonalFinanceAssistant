@@ -1,22 +1,24 @@
 import React from 'react';
-import {View, Button, StyleSheet} from 'react-native';
-import {Field, reduxForm} from 'redux-form';
-import {TRANSACTION_FORM} from 'src/constants/forms';
+import { View, Button, StyleSheet } from 'react-native';
+import { Field, reduxForm } from 'redux-form';
+import { TRANSACTION_FORM } from 'src/constants/forms';
 import moment from 'moment';
 import SelectInput from '../SelectInputField';
 import TextInput from '../TextInputField';
 import DatePickerField from '../DatePickerField';
 import validate from './validate';
-import {PrimaryButton} from 'src/components';
+import { PrimaryButton } from 'src/components';
 
-function TransactionForm({
-    handleSubmit,
-    submitting,
-    invalid,
-    options,
-    submitBtnText,
-    createTransaction
-}) {
+function TransactionForm(
+    {
+        handleSubmit,
+        submitting,
+        invalid,
+        options,
+        submitBtnText,
+        createTransaction
+    }
+) {
     return (
         <View style={styles.container}>
             <Field

@@ -8,7 +8,6 @@ const keyExtractor = (item, index) => index;
 
 class TransactionsList extends Component {
     renderItem=({ item })=> {
-
         return <TransactionsListItem data={item} onSelectTransaction={this.props.onSelectTransaction} />;
     };
 

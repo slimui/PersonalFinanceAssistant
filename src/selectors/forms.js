@@ -1,8 +1,8 @@
-import {INCOME_CATEGORY} from 'src/constants/categoryTypes';
-import {getSelectInputOptionsFromAllAccounts} from 'src/selectors/accounts';
-import {getSelectInputOptionsFromAllCategories} from 'src/selectors/categories';
+import { INCOME_CATEGORY } from 'src/constants/categoryTypes';
+import { getSelectInputOptionsFromAllAccounts } from 'src/selectors/accounts';
+import { getSelectInputOptionsFromAllCategories } from 'src/selectors/categories';
 import icons from 'src/constants/icons';
-import {values} from 'lodash';
+import { values } from 'lodash';
 
 export const getCategoryFormInitialValues = (
     {
@@ -18,7 +18,7 @@ export const getCategoryFormInitialValues = (
     };
 };
 
-export const getEditAccountFormInitialValues = ({accounts: {byId, selected}}) => {
+export const getEditAccountFormInitialValues = ({ accounts: {byId, selected} }) => {
     if (!selected || !byId[selected]) {
         return {
             name: null,
@@ -27,7 +27,7 @@ export const getEditAccountFormInitialValues = ({accounts: {byId, selected}}) =>
         };
     }
 
-    const {name, icon, initialDate} = byId[selected];
+    const { name, icon, initialDate } = byId[selected];
 
     return {
         icon,

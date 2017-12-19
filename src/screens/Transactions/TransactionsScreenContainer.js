@@ -9,7 +9,6 @@ import { withLoadingIndicator } from 'src/components';
 import TransactionsScreen from './TransactionsScreen';
 import { selectTransaction } from 'src/actions/transactions';
 
-
 const mapStateToProps = state => {
     return {
         currentDate: getFormattedCurrentDate(state),
